@@ -1,0 +1,74 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f1620;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="greenGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect width="1024" height="1024" rx="180" fill="url(#bgGrad)"/>
+
+  <!-- Outer blue glow circle -->
+  <circle cx="512" cy="512" r="400" fill="none" stroke="url(#blueGlow)" stroke-width="4" opacity="0.3" filter="url(#glow)"/>
+
+  <!-- Main process icon - centered circle with network connections -->
+  <circle cx="512" cy="512" r="120" fill="url(#blueGlow)" opacity="0.2" filter="url(#glow)"/>
+  <circle cx="512" cy="512" r="120" fill="none" stroke="url(#blueGlow)" stroke-width="8" filter="url(#glow)"/>
+
+  <!-- Process symbol inside -->
+  <circle cx="512" cy="512" r="60" fill="url(#blueGlow)" filter="url(#glow)"/>
+
+  <!-- Port nodes around the center (8 nodes representing ports) -->
+  <!-- Top -->
+  <circle cx="512" cy="200" r="45" fill="url(#greenGlow)" opacity="0.9" filter="url(#glow)"/>
+  <line x1="512" y1="245" x2="512" y2="392" stroke="url(#blueGlow)" stroke-width="4" opacity="0.6" stroke-dasharray="8,8"/>
+
+  <!-- Top Right -->
+  <circle cx="724" cy="300" r="45" fill="url(#greenGlow)" opacity="0.9" filter="url(#glow)"/>
+  <line x1="681" y1="330" x2="572" y2="462" stroke="url(#blueGlow)" stroke-width="4" opacity="0.6" stroke-dasharray="8,8"/>
+
+  <!-- Right -->
+  <circle cx="824" cy="512" r="45" fill="url(#greenGlow)" opacity="0.9" filter="url(#glow)"/>
+  <line x1="779" y1="512" x2="632" y2="512" stroke="url(#blueGlow)" stroke-width="4" opacity="0.6" stroke-dasharray="8,8"/>
+
+  <!-- Bottom Right -->
+  <circle cx="724" cy="724" r="45" fill="url(#greenGlow)" opacity="0.9" filter="url(#glow)"/>
+  <line x1="681" y1="694" x2="572" y2="562" stroke="url(#blueGlow)" stroke-width="4" opacity="0.6" stroke-dasharray="8,8"/>
+
+  <!-- Bottom -->
+  <circle cx="512" cy="824" r="45" fill="url(#greenGlow)" opacity="0.9" filter="url(#glow)"/>
+  <line x1="512" y1="779" x2="512" y2="632" stroke="url(#blueGlow)" stroke-width="4" opacity="0.6" stroke-dasharray="8,8"/>
+
+  <!-- Bottom Left -->
+  <circle cx="300" cy="724" r="45" fill="url(#greenGlow)" opacity="0.9" filter="url(#glow)"/>
+  <line x1="343" y1="694" x2="452" y2="562" stroke="url(#blueGlow)" stroke-width="4" opacity="0.6" stroke-dasharray="8,8"/>
+
+  <!-- Left -->
+  <circle cx="200" cy="512" r="45" fill="url(#greenGlow)" opacity="0.9" filter="url(#glow)"/>
+  <line x1="245" y1="512" x2="392" y2="512" stroke="url(#blueGlow)" stroke-width="4" opacity="0.6" stroke-dasharray="8,8"/>
+
+  <!-- Top Left -->
+  <circle cx="300" cy="300" r="45" fill="url(#greenGlow)" opacity="0.9" filter="url(#glow)"/>
+  <line x1="343" y1="330" x2="452" y2="462" stroke="url(#blueGlow)" stroke-width="4" opacity="0.6" stroke-dasharray="8,8"/>
+</svg>

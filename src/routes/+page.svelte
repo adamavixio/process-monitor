@@ -146,18 +146,17 @@
                     <div class="port-values">
                       {#each pidInfo.ports.split(', ') as singlePort}
                         {#if getPortUrl(singlePort)}
-                          <a
-                            href="#"
+                          <button
+                            type="button"
                             class="port-badge clickable"
                             onclick={(e) => {
-                              e.preventDefault();
                               e.stopPropagation();
                               openUrl(getPortUrl(singlePort)!);
                             }}
                             title="Open http://localhost:{singlePort}"
                           >
                             {singlePort}
-                          </a>
+                          </button>
                         {:else}
                           <span class="port-badge">
                             {singlePort}
