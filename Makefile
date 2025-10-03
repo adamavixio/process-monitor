@@ -13,6 +13,9 @@ dev:
 	bun run tauri dev
 
 build:
+	APPLE_API_KEY=JKZV3THTDC \
+	APPLE_API_ISSUER=b4435452-af0c-44e8-87b7-836f506db990 \
+	APPLE_API_KEY_PATH=~/.tauri-keys/AuthKey_JKZV3THTDC.p8 \
 	bun run tauri build
 
 release: build

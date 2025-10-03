@@ -103,6 +103,7 @@
 </script>
 
 <main>
+  <div class="drag-region" data-tauri-drag-region></div>
   <div class="container">
     <div class="header">
       <h1>Process Monitor</h1>
@@ -202,11 +203,21 @@
 </main>
 
 <style>
+  .drag-region {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    z-index: 1000;
+  }
+
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+    padding-top: 2rem;
   }
 
   .controls {
@@ -254,6 +265,11 @@
     background: linear-gradient(135deg, #050811 0%, #0a1128 50%, #080d1a 100%);
     background-attachment: fixed;
     color: #e0e0e0;
+    min-height: 100vh;
+  }
+
+  :global(::-webkit-scrollbar) {
+    display: none;
   }
 
   .container {
