@@ -9,10 +9,11 @@ help:
 	@echo "  make clean  - Clean build artifacts"
 	@echo ""
 	@echo "To create a release:"
-	@echo "  1. Update version in src-tauri/tauri.conf.json"
-	@echo "  2. git add . && git commit -m 'Bump version to vX.X.X'"
-	@echo "  3. git tag vX.X.X && git push origin main --tags"
-	@echo "  4. GitHub Actions will automatically build and release"
+	@echo "  1. Update version in src-tauri/tauri.conf.json (e.g., 0.1.6)"
+	@echo "  2. git add . && git commit -m 'Bump version to v0.1.6'"
+	@echo "  3. git tag v0.1.6"
+	@echo "  4. git push origin main --tags"
+	@echo "  5. GitHub Actions will build, sign, notarize, and release automatically"
 
 dev:
 	bun run tauri dev

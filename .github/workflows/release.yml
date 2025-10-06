@@ -40,10 +40,15 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Update version from tag
+      - name: Verify version matches tag
         run: |
-          VERSION=${GITHUB_REF_NAME#v}
-          bun x json -I -f src-tauri/tauri.conf.json -e "this.version='$VERSION'"
+          TAG_VERSION=${GITHUB_REF_NAME#v}
+          CONFIG_VERSION=$(grep '"version"' src-tauri/tauri.conf.json | head -1 | sed 's/.*: "\(.*\)".*/\1/')
+          if [ "$TAG_VERSION" != "$CONFIG_VERSION" ]; then
+            echo "Error: Tag version ($TAG_VERSION) doesn't match tauri.conf.json version ($CONFIG_VERSION)"
+            exit 1
+          fi
+          echo "Version check passed: $TAG_VERSION"
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
